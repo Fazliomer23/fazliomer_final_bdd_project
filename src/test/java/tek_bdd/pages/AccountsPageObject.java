@@ -4,7 +4,15 @@ import org.openqa.selenium.By;
 import tek_bdd.utilities.SeleniumUtility;
 
 public class AccountsPageObject extends SeleniumUtility {
-    public static final By ACCOUNTS_BUTTON = By.linkText("Accounts");
+
+
+
+    public static final By LOGIN_BUTTON = By.xpath("//a[@class='chakra-button css-ez23ye']");
+    public static final By USER_NAME = By.xpath("//input[@name='username']");
+
+}
+
+   /* public static final By ACCOUNTS_BUTTON = By.linkText("Accounts");
     public static final By PRIMARY_ACCOUNT_TITLE = By.xpath("//h2[text()='Primary Accounts']");
 
     public static final By TABLE_ROW_ELEMENT = By.xpath("//table/tbody/tr");

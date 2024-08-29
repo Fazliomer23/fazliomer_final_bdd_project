@@ -12,9 +12,11 @@ import java.util.List;
 public class AccountsSteps  extends SeleniumUtility {
     @Then("click on Accounts button")
     public void clickOnAccountsButton() {
-        clickOnElement(AccountsPageObject.ACCOUNTS_BUTTON);
+        clickOnElement(AccountsPageObject.LOGIN_BUTTON);
 
     }
+    @Then("enter the user name")
+    public void
 
     @Then("validate Primary Accounts title is exist")
     public void validatePrimaryAccountsTitleIsExist() {

@@ -10,7 +10,7 @@ import org.junit.runner.RunWith;
         glue = "tek.bdd.steps",
         tags = "@Smoke",
         dryRun = false,
-        monochrome = true,
+        monochrome = false,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {
                 "html:target/cucumber-report/report.html",

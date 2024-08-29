@@ -8,7 +8,6 @@ Feature: Create Primary Account
   @Scenario_1
   Scenario: Create New Account and then login
     Then validate section title to be Create Primary Account Holder
-    Then close browser
 
   @Scenario_2
   Scenario: Validate user navigate to Sign up your Account page
@@ -19,11 +18,10 @@ Feature: Create Primary Account
     Then validate email address shows as expected
     When when the user fill up sign up form
     Then click on submit button
-    Then close browser
+
 
   @Scenario_3
   Scenario: Validate user navigate to Sign up your Account page
     When fill up create account form page
     Then click on Create Account button
     Then validate account error message
-    Then close browser

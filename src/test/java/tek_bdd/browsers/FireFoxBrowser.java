@@ -4,7 +4,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 
-public class FirFoxBrowser implements BaseBrowser {
+public class FireFoxBrowser implements BaseBrowser {
     @Override
     public WebDriver openBrowser(boolean isHeadless) {
         FirefoxOptions options = new FirefoxOptions();

@@ -11,10 +11,9 @@ Feature: Login with credential and validate Plans Page
   @Scenario_1
   Scenario: Navigate to Customer Service Portal with valid CSR credentials and Validate 4 row of data is present.
     Then validate 4 row of the data is present
-    Then close browser
+
 
   @Scenario_2
   Scenario:
     Then validate Create Date is today's date in EST Time zone
     Then validate Date Expire is a day after EST Time Zone
-    Then close browser

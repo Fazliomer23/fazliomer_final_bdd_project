@@ -8,7 +8,9 @@ import org.openqa.selenium.WebDriver;
 import tek_bdd.browsers.BaseBrowser;
 import tek_bdd.browsers.ChromeBrowser;
 import tek_bdd.browsers.EdgeBrowser;
+import tek_bdd.browsers.FireFoxBrowser;
 import tek_bdd.exeptions.ExceptionsHandling;
+import tek_bdd.utilities.Constants;
 
 import java.io.File;
 import java.io.FileInputStream;
@@ -16,7 +18,7 @@ import java.io.IOException;
 import java.time.Duration;
 import java.util.Properties;
 
-public class BaseSetup {
+public  abstract class BaseSetup {
     private static WebDriver driver;
     private static final Logger LOGGER = LogManager.getLogger(BaseSetup.class);
     private final Properties properties;
@@ -51,7 +53,6 @@ public class BaseSetup {
             browser = new FireFoxBrowser();
         else
             throw new ExceptionsHandling("Wrong browser type, choose another browser such as chrome, firefox and edge");
-
         driver = browser.openBrowser(isHeadless);
         String url = properties.getProperty("ui.url");
         LOGGER.debug("Using URL {}", url);
@@ -62,14 +63,12 @@ public class BaseSetup {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Constants.WAIT_IN_SECONDS));
 
     }
-
     public void quitBrowser() {
         if (driver != null) {
             LOGGER.info("Quitting the Browser");
             driver.quit();
         }
     }
-
     public WebDriver getDriver() {
         LOGGER.info("Getting the driver");
         return driver;

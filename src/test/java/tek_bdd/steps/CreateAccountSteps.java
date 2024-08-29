@@ -4,6 +4,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import tek_bdd.pages.CreateAccountPageObject;
+import tek_bdd.utilities.RundomGenerator;
 import tek_bdd.utilities.SeleniumUtility;
 
 public class CreateAccountSteps extends SeleniumUtility {
@@ -20,8 +21,8 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @Then("fill up create account form")
     public void fillUpCreateAccountForm() {
-        String prefix = "Jawid";
-        String randomEmail = RandomGenerator.randomEmail(prefix);
+        String prefix = "omer";
+        String randomEmail = RundomGenerator.randomEmail(prefix);
         sendText(CreateAccountPageObject.EMAIL_INPUT, randomEmail);
         selectFromDropDown(CreateAccountPageObject.PREFIX_SELECT, "Mr.");
         sendText(CreateAccountPageObject.FIRST_NAME_INPUT, "Fazliomer");
@@ -57,9 +58,9 @@ public class CreateAccountSteps extends SeleniumUtility {
     }
     @When("when the user fill up sign up form")
     public void whenTheUserFillUpSignUpForm() {
-        sendText(CreateAccountPageObject.USERNAME_INPUT, "Jawid");
-        sendText(CreateAccountPageObject.PASSWORD_INPUT, "Jawid123$");
-        sendText(CreateAccountPageObject.CONFIRM_PASSWORD_INPUT, "Jawid123");
+        sendText(CreateAccountPageObject.USERNAME_INPUT, "Fazliomer");
+        sendText(CreateAccountPageObject.PASSWORD_INPUT, "Omer32@");
+        sendText(CreateAccountPageObject.CONFIRM_PASSWORD_INPUT, "Omer32@");
     }
     @Then("click on submit button")
     public void clickOnSubmitButton() {

@@ -1,10 +1,11 @@
 package tek_bdd.steps;
 
+
 import io.cucumber.java.After;
+import io.cucumber.java.Before;
 import io.cucumber.java.Scenario;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.junit.Before;
 import tek_bdd.utilities.SeleniumUtility;
 
 public class Hooks extends SeleniumUtility {
