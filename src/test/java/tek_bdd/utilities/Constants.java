@@ -1,0 +1,5 @@
+package tek_bdd.utilities;
+
+public class Constants {
+    public static final long WAIT_IN_SECONDS = 15;
+}
