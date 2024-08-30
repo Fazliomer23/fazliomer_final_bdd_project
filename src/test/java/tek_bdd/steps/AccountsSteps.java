@@ -10,13 +10,12 @@ import tek_bdd.utilities.SeleniumUtility;
 import java.util.List;
 
 public class AccountsSteps  extends SeleniumUtility {
+
     @Then("click on Accounts button")
     public void clickOnAccountsButton() {
-        clickOnElement(AccountsPageObject.LOGIN_BUTTON);
+        clickOnElement(AccountsPageObject.ACCOUNTS_BUTTON);
 
     }
-    @Then("enter the user name")
-    public void
 
     @Then("validate Primary Accounts title is exist")
     public void validatePrimaryAccountsTitleIsExist() {
@@ -34,4 +33,5 @@ public class AccountsSteps  extends SeleniumUtility {
     @When("change item per page to {string}")
     public void changeItemPerPageTo(String itemPerPage) {
         selectFromDropDown(AccountsPageObject.ITEM_PER_PAGE_SELECT, "Show " + itemPerPage);
-}}
+    }
+}

@@ -3,8 +3,8 @@ package tek_bdd.pages;
 import org.openqa.selenium.By;
 
 public class CreateAccountPageObject {
-    public static final By CREATE_PRIMARY_ACCOUNT_LINK = By.linkText("Create Primary Account");
-    public static final By CREATE_PRIMARY_ACCOUNT_HOLDER_TILE = By.xpath("//h2[text()='Create Primary Account Holder']");
+   public static final By CREATE_PRIMARY_ACCOUNT_LINK = By.linkText("Create Primary Account");
+   public static final By CREATE_PRIMARY_ACCOUNT_HOLDER_TILE = By.xpath("//h2[text()='Create Primary Account Holder']");
     public static final By EMAIL_INPUT = By.name("email");
     public static final By PREFIX_SELECT = By.name("title");
     public static final By FIRST_NAME_INPUT = By.name("firstName");
