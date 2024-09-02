@@ -27,7 +27,7 @@ public class AccountsSteps  extends SeleniumUtility {
     @Then("validate table row count to be {int}")
     public void validateTableRowCountToBe(int expectedRows) {
         List<WebElement> tableRow = getElements(AccountsPageObject.TABLE_ROW_ELEMENT);
-        Assert.assertEquals("validate table rows", tableRow.size(),expectedRows);
+        Assert.assertEquals("validate table rows", tableRow.size(), expectedRows);
     }
 
     @When("change item per page to {string}")

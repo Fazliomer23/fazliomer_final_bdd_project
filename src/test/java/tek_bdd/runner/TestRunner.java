@@ -10,13 +10,12 @@ import org.junit.runner.RunWith;
         glue = "tek.bdd.steps",
         tags = "@Smoke",
         dryRun = false,
-        monochrome = false,
+        monochrome = true,
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         plugin = {
                 "html:target/cucumber-report/report.html",
                 "pretty",
         }
 )
-
-public class TestRunner {
+public class TestRunner{
 }

@@ -2,7 +2,6 @@ package tek_bdd.base;
 
 
 import org.apache.logging.log4j.LogManager;
-
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
 import tek_bdd.browsers.BaseBrowser;
@@ -32,13 +31,13 @@ public  abstract class BaseSetup {
             FileInputStream fileInputStream = new FileInputStream(file);
             properties = new Properties();
             properties.load(fileInputStream);
-        } catch (IOException exception) {
+        }catch (IOException exception){
             LOGGER.error("Error reading config file", exception);
             throw new ExceptionsHandling("Something wrong with config file");
         }
     }
 
-    public void openBrowser() {
+    public void openBrowser(){
         String browserType = properties.getProperty("ui.browser");
         boolean isHeadless = Boolean.parseBoolean(properties.getProperty("ui.browser.headless"));
         LOGGER.info("Running on browser {}", browserType);
@@ -53,6 +52,7 @@ public  abstract class BaseSetup {
             browser = new FireFoxBrowser();
         else
             throw new ExceptionsHandling("Wrong browser type, choose another browser such as chrome, firefox and edge");
+
         driver = browser.openBrowser(isHeadless);
         String url = properties.getProperty("ui.url");
         LOGGER.debug("Using URL {}", url);
@@ -63,14 +63,15 @@ public  abstract class BaseSetup {
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(Constants.WAIT_IN_SECONDS));
 
     }
-    public void quitBrowser() {
-        if (driver != null) {
+    public void quitBrowser(){
+        if(driver != null){
             LOGGER.info("Quitting the Browser");
             driver.quit();
         }
     }
-    public WebDriver getDriver() {
+    public WebDriver getDriver(){
         LOGGER.info("Getting the driver");
         return driver;
     }
+
 }

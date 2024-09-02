@@ -12,6 +12,7 @@ public class HomePageSteps extends SeleniumUtility {
         openBrowser();
 
     }
+
     @Then("validate TEK Insurance UI is exist")
     public void validateTekInsuranceUiIsExist() {
         String tekInsuranceText = getElementText(HomePageObject.TEK_INSURANCE_UI_TEXT);
@@ -19,23 +20,26 @@ public class HomePageSteps extends SeleniumUtility {
         System.out.println(tekInsuranceText);
 
     }
+
     @Then("validate Create Primary Account is exist")
     public void validateCreatePrimaryAccountIsExist() {
         String createPrimaryAccountText = getElementText(HomePageObject.CREATE_PRIMARY_ACCOUNT_BUTTON);
-        Assert.assertEquals("Create Primary Account",createPrimaryAccountText);
+        Assert.assertEquals("Create Primary Account", createPrimaryAccountText);
         System.out.println(createPrimaryAccountText);
 
     }
+
     @Then("validate Login button is enabled")
     public void validateLoginButtonIsEnabled() {
         boolean loginBtnText = isElementIsEnabled(HomePageObject.LOGIN_BUTTON);
         Assert.assertTrue("Login button should be enabled", loginBtnText);
 
     }
+
     @Then("validate color mode button is displayed")
     public void validateColorModeButtonIsDisplayed() {
         boolean colorModeOption = isElementIsDisplayed(HomePageObject.COLOR_MOOD_BUTTON);
         Assert.assertTrue("Dark mode color button must be displayed", colorModeOption);
     }
-}
 
+}

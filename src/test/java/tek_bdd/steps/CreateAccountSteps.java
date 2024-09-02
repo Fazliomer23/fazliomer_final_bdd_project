@@ -4,8 +4,9 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
 import tek_bdd.pages.CreateAccountPageObject;
-import tek_bdd.utilities.RundomGenerator;
+import tek_bdd.utilities.RandomGenerator;
 import tek_bdd.utilities.SeleniumUtility;
+
 
 public class CreateAccountSteps extends SeleniumUtility {
     @When("click on Crate Primary Account link")
@@ -21,16 +22,16 @@ public class CreateAccountSteps extends SeleniumUtility {
 
     @Then("fill up create account form")
     public void fillUpCreateAccountForm() {
-        String prefix = "omer";
-        String randomEmail = RundomGenerator.randomEmail(prefix);
+        String prefix = "Omerali";
+        String randomEmail = RandomGenerator.randomEmail(prefix);
         sendText(CreateAccountPageObject.EMAIL_INPUT, randomEmail);
         selectFromDropDown(CreateAccountPageObject.PREFIX_SELECT, "Mr.");
-        sendText(CreateAccountPageObject.FIRST_NAME_INPUT, "Fazliomer");
-        sendText(CreateAccountPageObject.LAST_NAME_INPUT, "Ali");
+        sendText(CreateAccountPageObject.FIRST_NAME_INPUT, "Omerali");
+        sendText(CreateAccountPageObject.LAST_NAME_INPUT, "khan");
         selectFromDropDown(CreateAccountPageObject.GENDER_SELECT, "Male");
         selectFromDropDown(CreateAccountPageObject.MARITAL_STATUS_SELECT, "Single");
         sendText(CreateAccountPageObject.EMPLOYMENT_STATUS, "Test Engineer");
-        sendText(CreateAccountPageObject.DATE_OF_BIRTH, "03/21/2001");
+        sendText(CreateAccountPageObject.DATE_OF_BIRTH, "01/21/2001");
     }
 
     @Then("click on Create Account button")
@@ -58,7 +59,7 @@ public class CreateAccountSteps extends SeleniumUtility {
     }
     @When("when the user fill up sign up form")
     public void whenTheUserFillUpSignUpForm() {
-        sendText(CreateAccountPageObject.USERNAME_INPUT, "Fazliomer");
+        sendText(CreateAccountPageObject.USERNAME_INPUT, "Omerali");
         sendText(CreateAccountPageObject.PASSWORD_INPUT, "Omer32@");
         sendText(CreateAccountPageObject.CONFIRM_PASSWORD_INPUT, "Omer32@");
     }
@@ -70,14 +71,14 @@ public class CreateAccountSteps extends SeleniumUtility {
     @Then("fill up create account form page")
     public void fillUpCreateAccountFormPage() {
 
-        sendText(CreateAccountPageObject.EMAIL_INPUT, "fazliomer@gmail.com");
+        sendText(CreateAccountPageObject.EMAIL_INPUT, "omerkhan21@gmail.com");
         selectFromDropDown(CreateAccountPageObject.PREFIX_SELECT, "Mr.");
-        sendText(CreateAccountPageObject.FIRST_NAME_INPUT, "Fazliomer");
-        sendText(CreateAccountPageObject.LAST_NAME_INPUT, "Ali");
+        sendText(CreateAccountPageObject.FIRST_NAME_INPUT, "Omerali");
+        sendText(CreateAccountPageObject.LAST_NAME_INPUT, "khan");
         selectFromDropDown(CreateAccountPageObject.GENDER_SELECT, "Male");
         selectFromDropDown(CreateAccountPageObject.MARITAL_STATUS_SELECT, "Single");
         sendText(CreateAccountPageObject.EMPLOYMENT_STATUS, "Test Engineer");
-        sendText(CreateAccountPageObject.DATE_OF_BIRTH, "03/21/2001");
+        sendText(CreateAccountPageObject.DATE_OF_BIRTH, "01/21/2001");
     }
     @When("validate account error message")
     public void validateAccountErrorMessage() {
@@ -86,5 +87,4 @@ public class CreateAccountSteps extends SeleniumUtility {
         System.out.println(errorMessage);
 
     }
-
 }

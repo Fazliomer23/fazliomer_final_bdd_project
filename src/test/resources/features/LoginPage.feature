@@ -8,7 +8,7 @@ Feature: Enter with valid username and password and then login to tek insurance 
   @Practice
   Scenario: Navigate to login page
     Then validate Sign in to your Account text is exist
-
+    Then close browser
 
   @Scenario_1
   Scenario: Navigate to login page with valid username and password

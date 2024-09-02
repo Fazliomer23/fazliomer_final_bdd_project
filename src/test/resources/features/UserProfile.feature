@@ -1,19 +1,20 @@
 @Smoke @Regression
-Feature: Login with credential and validate Plans Page
 
-  Background: open browser and navigate to retail app
+Feature: Navigate to login page with valid CSR credentials
+
+  Background: User should be able to open browser and sign in with valid username and password
     Given open browser and navigate to retail app
     Then click on login button
     Then enter username "supervisor" and password "tek_supervisor"
     Then click on sign in button
-    When click on plans button
+    Then click on profile button
 
   @Scenario_1
-  Scenario: Navigate to Customer Service Portal with valid CSR credentials and Validate 4 row of data is present.
-    Then validate 4 row of the data is present
-
+  Scenario: Enter valid username and password and then login
+    Then validate information in Profile Side Drawer is correct
+    Then close browser
 
   @Scenario_2
-  Scenario:
-    Then validate Create Date is today's date in EST Time zone
-    Then validate Date Expire is a day after EST Time Zone
+  Scenario: Click on Logout button make sure user navigate to home page
+    Then click on logout button
+    Then close browser
